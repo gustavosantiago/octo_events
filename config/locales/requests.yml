@@ -1,0 +1,4 @@
+en:
+  requests:
+    status:
+      not_found: 'resource not found.'
