@@ -7,7 +7,7 @@ module Api
         render json: { data: [] }, status: :ok
       end
 
-      def create; end
+      def payload; end
     end
   end
 end
