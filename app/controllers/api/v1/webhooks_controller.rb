@@ -7,7 +7,9 @@ module Api
         render json: { data: [] }, status: :ok
       end
 
-      def payload; end
+      def payload
+        binding.pry
+      end
     end
   end
 end
