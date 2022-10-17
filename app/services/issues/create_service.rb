@@ -23,7 +23,6 @@ module Issues
 
           if issue.save!
             event_url = params[:repository][:events_url]
-
             Events::CreateService.call(issue, event_url)
           end
         end
