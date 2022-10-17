@@ -35,6 +35,7 @@ gem 'devise'
 gem 'devise_token_auth'
 
 group :development, :test do
+  gem 'faker'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'pry'
 end
