@@ -10,9 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_17_001128) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_17_023530) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.bigint "issue_id", null: false
+    t.string "name"
+    t.text "payload"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["issue_id"], name: "index_events_on_issue_id"
+  end
+
+  create_table "issues", force: :cascade do |t|
+    t.string "hook_id"
+    t.text "hook"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "webhooks", force: :cascade do |t|
     t.string "event", null: false
@@ -24,4 +40,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_17_001128) do
     t.index ["payload"], name: "index_webhooks_on_payload"
   end
 
+  add_foreign_key "events", "issues"
 end
