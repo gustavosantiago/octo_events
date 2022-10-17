@@ -4,14 +4,14 @@
 Octo Events is a Project building with Ruby on Rails and Postgres. This project has an objective to collect and save the Webhooks responses coming from Github.
 
 ## First Steps
-1 - You need install ruby 3.1.2
-2 - Clone the repo
-3 - Run bundle install to download all gem dependencies
-4 - Execute `rails db:create` to create database
-5 - Execute `rails db:migrate` for creating migrations
-6 - Execute `rails db:seeds` for creating the main user for applying the requests
-7 - Runs `rspec` to execute all spec scenarios
-8 - Runs `rails server` to start puma and login into the application
+1. You need install ruby 3.1.2
+2. Clone the repo
+3. Run bundle install to download all gem dependencies
+4. Execute `rails db:create` to create database
+5. Execute `rails db:migrate` for creating migrations
+6. Execute `rails db:seeds` for creating the main user for applying the requests
+7. Runs `rspec` to execute all spec scenarios
+8. Runs `rails server` to start puma and login into the application
 
 Is very important you have installed ngrok to create the tunnel for GH connections, so after apoint the ngrok to the application (`ngrok http 3000`) get the URL and use it on GitHub for receive the payloads :) 
 
