@@ -6,10 +6,12 @@ Rails.application.routes.draw do
 
   namespace :api, constraints: { format: 'json' } do
     namespace :v1 do
-      resources :webhooks, only: %i[index] do
-        collection do
-          post :payload
-        end
+      namespace :webhooks do
+        post :payload
+      end
+
+      resources :issues, only: [] do
+        resources :events, only: %i[index]
       end
     end
   end

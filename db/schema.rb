@@ -16,16 +16,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_17_023530) do
 
   create_table "events", force: :cascade do |t|
     t.bigint "issue_id", null: false
-    t.string "name"
-    t.text "payload"
+    t.string "type", null: false
+    t.text "payload", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["issue_id"], name: "index_events_on_issue_id"
+    t.index ["type"], name: "index_events_on_type"
   end
 
   create_table "issues", force: :cascade do |t|
-    t.string "hook_id"
-    t.text "hook"
+    t.string "hook_id", null: false
+    t.text "hook", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
